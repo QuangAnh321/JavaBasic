@@ -1,4 +1,4 @@
-package section7;
+package section7.encapsulation;
 
 public class Printer {
 
@@ -58,11 +58,16 @@ public class Printer {
 
 	public void printAPage(int numberofPageTobePrinted) {
 		this.numberofPagePrinted += numberofPageTobePrinted;
+		if (this.isDuplexPrinter) {
+			this.numberofPagePrinted =  (numberofPageTobePrinted / 2) +  
+					(numberofPageTobePrinted % 2);
+		}
 		System.out.println(this.numberofPagePrinted + " pages has been printed successfully!");
 	}
 
 	public static void main(String[] args) {
-		Printer epson = new Printer(50, false);
-		epson.fillToner(80);
+		Printer epson = new Printer(50, true);
+		epson.fillToner(10);
+		epson.printAPage(7);
 	}
 }
