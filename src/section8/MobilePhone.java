@@ -37,14 +37,6 @@ public class MobilePhone {
 			System.out.println("The contact with name: "+name+" cannot be found");
 			modifyContact();
 		} else {
-			System.out.println("Enter new contact name, or press n to skip:");
-			String newName = sc.nextLine();
-			if (newName.equalsIgnoreCase("n")) {
-				newName = contact.getName();
-			} else {
-				contact.setName(newName);
-			}
-			
 			System.out.println("Enter new contact phone number , or press 0 to skip:");
 			int newPhoneNumber = sc.nextInt();
 			if (newPhoneNumber == 0) {
